@@ -1,12 +1,12 @@
-# scanner_segreti.py
-# Uso: python3 scanner_segreti.py <github-token> [username_or_org]
+
+# Use: python3 scanner_segreti.py <github-token> [username_or_org]
 import sys
 import re
 import base64
 from math import log2
 from github import Github
 
-# Calcola entropia di Shannon di una stringa
+
 def shannon_entropy(s: str) -> float:
     if not s:
         return 0.0
@@ -20,7 +20,7 @@ KEYWORDS = [
 ]
 COMPILED_KEYWORDS = re.compile('|'.join(KEYWORDS), re.IGNORECASE)
 
-# Pattern per stringhe sospette (base64/hex/alphanum lunghe)
+
 SUSPICIOUS_STRING = re.compile(r'([A-Za-z0-9+/]{20,}|[A-Fa-f0-9]{20,})')
 
 MAX_FILE_SIZE = 100 * 1024  # ignora file > 100 KB
